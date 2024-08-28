@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Results">
+
+    <Button
+        android:id="@+id/btnReturn"
+        android:layout_width="183dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="Regresar al inicio"
+        app:layout_constraintBottom_toBottomOf="@+id/linearLayout"
+        app:layout_constraintEnd_toEndOf="@+id/linearLayout"
+        app:layout_constraintStart_toStartOf="@+id/linearLayout"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.22000003" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tvResult1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Tu capacidad de Ram es: "
+                 />
+
+            <TextView
+                android:id="@+id/tvResult2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Tu capacidad de CPU es: "
+
+                />
+
+            <TextView
+                android:id="@+id/tvResult3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="La capacidad de tu tarjeta gráfica es: "
+                />
+
+            <TextView
+                android:id="@+id/tvResult4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="La capacidad de tu monitor es: "
+                />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tvRAMResult"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="16sp"
+                tools:text="TextView" />
+
+            <TextView
+                android:id="@+id/tvCPUResult"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="16sp"
+                tools:text="TextView" />
+
+            <TextView
+                android:id="@+id/tvGPUResult"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="16sp"
+                tools:text="TextView" />
+
+            <TextView
+                android:id="@+id/tvMonitorResult"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="16sp"
+                tools:text="TextView" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

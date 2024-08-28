@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Monitor">
+
+    <TextView
+        android:id="@+id/tvCantidadGpu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="100dp"
+        android:scaleX="2"
+        android:scaleY="2"
+        app:layout_constraintStart_toEndOf="@+id/tvMonitor"
+        tools:layout_editor_absoluteY="50dp"
+        tools:text="texto" />
+
+    <ImageView
+        android:id="@+id/imgMonitor"
+        android:layout_width="411dp"
+        android:layout_height="210dp"
+        android:scaleType="fitCenter"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/fps"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteY="195dp" />
+
+    <Button
+        android:id="@+id/btnSiguiente4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:text="Siguiente"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/tvMonitor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:rotation="0"
+        android:scaleX="2"
+        android:scaleY="2"
+        android:text="Tu tarjeta grafica es: "
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.3"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="50dp" />
+
+    <TextView
+        android:id="@+id/tvGpu4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:rotation="0"
+        android:scaleX="1.3"
+        android:scaleY="1.3"
+        android:text="Que tan bueno es tu monitor?"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvMonitor" />
+
+    <RadioGroup
+        android:id="@+id/rgMonitor"
+        android:layout_width="193dp"
+        android:layout_height="141dp"
+        android:layout_marginTop="50dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imgMonitor">
+
+        <RadioButton
+            android:id="@+id/rbMonitorLow"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Malo" />
+
+        <RadioButton
+            android:id="@+id/rbMonitorMedium"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Promedio" />
+
+        <RadioButton
+            android:id="@+id/rbMonitorHigh"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Bueno" />
+    </RadioGroup>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
