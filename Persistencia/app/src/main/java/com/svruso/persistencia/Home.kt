@@ -1,5 +1,6 @@
 package com.svruso.persistencia
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.ArrayAdapter
 import androidx.activity.enableEdgeToEdge
@@ -28,6 +29,35 @@ class Home : AppCompatActivity() {
             foodList)
 
         binding.spFood.adapter = adapter
+
+
+        binding.btnClose.setOnClickListener() {
+
+            // Borrar los sharedpreferences
+
+            val sp = getSharedPreferences("sesion", MODE_PRIVATE)
+
+            with(sp.edit()){
+                remove("user")
+                remove("password")
+                commit()
+            }
+
+
+            // Regresamos a la actividad de login
+
+            val intent = Intent(this@Home,
+                MainActivity::class.java)
+            intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK or
+                    Intent.FLAG_ACTIVITY_NEW_TASK)
+
+            startActivity(intent)
+
+
+        }
+
+
+
 
     }
 }
