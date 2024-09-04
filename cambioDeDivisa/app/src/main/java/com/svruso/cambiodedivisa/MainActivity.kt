@@ -1,7 +1,9 @@
 package com.svruso.cambiodedivisa
 
 import android.os.Bundle
+import android.util.Log
 import android.widget.ArrayAdapter
+import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -19,7 +21,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         val currencies = arrayOf("USD", "EUR", "GBP", "JPY", "CNY")
-
+        var result: Float = 0f // Var para cuando si se puede cambiar el valor
 
         binding.spnConvertFrom.adapter = ArrayAdapter(this, android.R.layout.simple_spinner_dropdown_item, currencies)
         binding.spnConvertTo.adapter = ArrayAdapter(this, android.R.layout.simple_spinner_dropdown_item, currencies)
@@ -27,9 +29,16 @@ class MainActivity : AppCompatActivity() {
         binding.btnConvert.setOnClickListener() {
             val ConvertFrom = binding.spnConvertFrom.selectedItem.toString()
             val ConvertTo = binding.spnConvertTo.selectedItem.toString()
-            val amount = binding.edtFrom.text.toString().toFloat()
+            var amount = binding.edtFrom.text.toString()
 
-            var result = convertCurrencies(ConvertFrom, ConvertTo, amount)
+            if (amount.isEmpty() == true) {
+                Log.e("ERROR", "El valor ingresado no es un número")
+                Toast.makeText(this, "Ingrese un valor valido porfavor", Toast.LENGTH_LONG).show()
+
+            }
+            else {
+                result = convertCurrencies(ConvertFrom, ConvertTo, amount.toFloat())
+            }
 
 
             binding.txtFinal.text = result.toString()
